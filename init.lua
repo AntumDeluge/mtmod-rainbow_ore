@@ -17,6 +17,7 @@ minetest.register_node("rainbow_ore:rainbow_ore_block", {
 	drop = "rainbow_ore:rainbow_ore_block",
 	is_ground_content = true,
 })
+minetest.register_alias("rainbow_ore:block", "rainbow_ore:rainbow_ore_block")
 
 
 --Define Rainbow_Ore_Ingot node
@@ -24,6 +25,7 @@ minetest.register_craftitem("rainbow_ore:rainbow_ore_ingot", {
 	description = "Rainbow Ore Ingot",
 	inventory_image = "rainbow_ore_ingot.png",
 })
+minetest.register_alias("rainbow_ore:ingot", "rainbow_ore:rainbow_ore_ingot")
 
 --Define Rainbow_Ore Smelt Recipe
 minetest.register_craft({
@@ -47,6 +49,9 @@ minetest.register_tool("rainbow_ore:rainbow_ore_pickaxe", {
 		damage_groups = {fleshy=5},
 	},
 })
+for index, alias in ipairs({"pick", "pickaxe",}) do
+	minetest.register_alias("rainbow_ore:" .. alias, "rainbow_ore:rainbow_ore_pickaxe")
+end
 
 
 --Define Rainbow_Ore_Pickaxe crafting recipe
@@ -73,7 +78,7 @@ minetest.register_tool("rainbow_ore:rainbow_ore_axe", {
 		damage_groups = {fleshy=7},
 	}
 })
-
+minetest.register_alias("rainbow_ore:axe", "rainbow_ore:rainbow_ore_axe")
 
 --Define Rainbow Axe crafting recipe
 minetest.register_craft({
@@ -109,7 +114,7 @@ minetest.register_tool("rainbow_ore:rainbow_ore_shovel", {
 		damage_groups = {fleshy=4},
 	},
 })
-
+minetest.register_alias("rainbow_ore:shovel", "rainbow_ore:rainbow_ore_shovel")
 
 --Define Rainbow shovel crafting recipe
 minetest.register_craft({
@@ -135,7 +140,7 @@ minetest.register_tool("rainbow_ore:rainbow_ore_sword", {
 		damage_groups = {fleshy=8},
 	}
 })
-
+minetest.register_alias("rainbow_ore:sword", "rainbow_ore:rainbow_ore_sword")
 
 --Define Rainbow sword crafting recipe
 minetest.register_craft({
